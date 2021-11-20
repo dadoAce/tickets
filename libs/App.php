@@ -109,7 +109,7 @@ class App
 
     public function filtroUsuario()
     {
-        require_once 'libs/sesiones.php';
+        require_once 'libs/Sesiones.php';
         $sesion = new sesiones();
         $sesion->filtroUsuario();
     }
