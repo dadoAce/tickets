@@ -12,7 +12,7 @@ class UsuarioModel extends Modelo {
     public $tabla = "usuarios";
     public $pk = "idUsuario";
     /* Opcion de usar un archivo entidad para filtrar algunas devoluciones; Se incluye una entidad de ejemplo: */
-    public $entidad = true;
+    public $entidad = false;
     public $entidad_nombre = "UsuarioEntidad";
     public $columnas = array("usuario", "password", "rol", "estatus", "fecha_creacion", "fecha_modificacion", "fecha_eliminacion");
 

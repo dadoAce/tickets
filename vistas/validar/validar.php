@@ -3,22 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Validar</title>
     <?= $this->vista("complementos/referencias/referencias"); ?>
 </head>
 
-<body>
-    <main class="bg-l-g-1">
-
-        <?
-        echo $contenido;
-        if (isset($contenido)) {
-            include_once $contenido;
-        }
-        ?>
+<body class="">
+    <main class="main-principal h-100">
+ 
     </main>
 </body>
 
 </html>
-
 <?= $this->vista("complementos/referencias/referencias_footer"); ?>
