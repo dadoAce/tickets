@@ -31,7 +31,7 @@ class App
     {
 
         /* Filtro para mandar a una pantalla si no se ha iniciado sesion */
-      //  $this->filtroUsuario();
+        $this->filtroUsuario();
 
         if (isset($_GET['url'])) {
             /** Cuando no se llama a la raiz: sitio.com/controlador * */
