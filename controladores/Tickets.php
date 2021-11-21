@@ -46,7 +46,7 @@ class Tickets extends App
         $vista["contenido"] = $this->vista("tickets/tickets_tabla", $datos);
     }
     public function prueba(){
-        echo "hola hola";
+        echo json_encode("hola");
         return "123455";
     }
 }
