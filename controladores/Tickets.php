@@ -40,10 +40,7 @@ class Tickets extends App
         $ticketModel = $this->modelo("TicketsM");
 
         /* Crear variables */
-        $datos["tickets"] = $ticketModel->selectAll();
-
-        $this->vista("complementos/referencias/referencias");
-        $vista["contenido"] = $this->vista("tickets/tickets_tabla", $datos);
+        echo json_encode($ticketModel->selectAll());
     }
     public function buscarTicket()
     {
@@ -56,8 +53,8 @@ class Tickets extends App
     public function estatusTicket()
     {
         $datos["statusTicket"] = $_GET["estatus"];
-        $datos["idTicket"] = $_GET["idTicket"]; 
-        $datos["idTicket"] = $_GET["ticket"]; 
+        $datos["idTicket"] = $_GET["idTicket"];
+        $datos["idTicket"] = $_GET["ticket"];
         $ticketModel = $this->modelo("TicketsM");
         $result = $ticketModel->update($datos);
         echo json_decode($result);
