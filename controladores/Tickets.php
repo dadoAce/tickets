@@ -45,9 +45,11 @@ class Tickets extends App
         $this->vista("complementos/referencias/referencias");
         $vista["contenido"] = $this->vista("tickets/tickets_tabla", $datos);
     }
-    public function ultimoTicket(){
-       
+    public function ultimoTicket()
+    {
+
         $ticketModel = $this->modelo("TicketsM");
-        $datos["tickets"] = $ticketModel->selectAll();
+        $ticket = $ticketModel->primerTicket();
+        echo json_encode($ticket);
     }
 }
