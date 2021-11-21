@@ -11,7 +11,7 @@ class TicketsM extends Modelo
 {
 
     public $tabla = "tickets";
-    public $pk = "idTicketPrimaria";
+    public $pk = "idTicket";
     /* Opcion de usar un archivo entidad para filtrar algunas devoluciones; Se incluye una entidad de ejemplo: */
     public $entidad = false;
     public $entidad_nombre = "UsuarioEntidad";

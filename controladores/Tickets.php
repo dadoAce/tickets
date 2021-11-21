@@ -52,4 +52,14 @@ class Tickets extends App
         $ticket = $ticketModel->primerTicket();
         echo json_encode($ticket);
     }
+
+    public function estatusTicket()
+    {
+        $datos["statusTicket"] = $_POST["estatus"];
+        $datos["idTicket"] = $_POST["idTicket"];
+        $datos["ticketNumber"] = $_POST["ticket"];
+        $ticketModel = $this->modelo("TicketsM");
+        $result = $ticketModel->update($datos);
+        return json_decode($result);
+    }
 }
