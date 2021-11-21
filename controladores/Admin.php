@@ -17,19 +17,15 @@ class Admin extends App
     public function inicio()
     {
         /* Llamar al Modelo Usuarios */
-        $this->modelo("UsuarioModel");
         /* Crear Objeto */
-        $usuarioM = new UsuarioModel();
+        $ticketModel = $this->modelo("TicketsM");
 
         /* Crear variables */
-        $datos["usuarios"] = $usuarioM->usuariosActivos(1);
-        $datos["usuariosInactivos"] = $usuarioM->usuariosActivos(0);
+        $datos["tickets"] = $ticketModel->selectAll();
 
         /* Direccion de vista en variable */
-        $this->vista("admin/template_Admin", $datos);
-        $vista["contenido"] = $this->vista("Admin/usuarios_admin", null, true);
+        $vista["contenido"] = $this->vista("tickets/tickets_tabla", $datos);
 
-        echo  $vista["contenido"];
         /* Mostrar la plantilla dibde se mostrara la el contenido */
         $this->vista("Admin/template_Admin", $vista);
     }

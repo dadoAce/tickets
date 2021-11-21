@@ -141,6 +141,7 @@ class App
             return $this->locacion_vistas . "/" . $vista . ".php";
         }
         if (file_exists($this->locacion_vistas . "/" . $vista . ".php")) {
+            
             if ($datos != null) {
 
                 extract($datos);

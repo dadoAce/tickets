@@ -10,8 +10,7 @@
 <body>
     <main class="bg-l-g-1">
 
-        <?
-        echo $contenido;
+        <?php 
         if (isset($contenido)) {
             include_once $contenido;
         }
