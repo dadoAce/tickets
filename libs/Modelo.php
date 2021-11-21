@@ -90,7 +90,9 @@ class Modelo extends App
         $values = substr($values, 0, -1);
         $query = "UPDATE $this->tabla set $values where $this->pk =" . $datos[$this->pk];
         $result = $this->query($query);
-        return $result[0];
+        if($result){
+            return true;
+        } 
     }
 
     /* Metodos Secundarios */

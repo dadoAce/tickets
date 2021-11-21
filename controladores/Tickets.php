@@ -54,7 +54,7 @@ class Tickets extends App
     {
         $datos["statusTicket"] = $_GET["estatus"];
         $datos["idTicket"] = $_GET["idTicket"];
-        $datos["idTicket"] = $_GET["ticket"];
+        $datos["ticketNumber"] = $_GET["ticket"];
         $ticketModel = $this->modelo("TicketsM");
         $result = $ticketModel->update($datos);
         echo json_decode($result);
