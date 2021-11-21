@@ -55,9 +55,8 @@ class Tickets extends App
 
     public function estatusTicket()
     {
-        $datos["statusTicket"] = $_POST["estatus"];
-        $datos["idTicket"] = $_POST["idTicket"];
-        $datos["ticketNumber"] = $_POST["ticket"];
+        $datos["statusTicket"] = $_GET["estatus"];
+        $datos["idTicket"] = $_GET["idTicket"]; 
         $ticketModel = $this->modelo("TicketsM");
         $result = $ticketModel->update($datos);
         return json_decode($result);
