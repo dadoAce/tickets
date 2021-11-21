@@ -34,6 +34,7 @@ class TicketsM extends Modelo
         $query = "select * from tickets where statusTicket like 'PENDING' ORDER BY idTicket asc limit 1";
  
         $result = $this->getRow($query);
+        return $result;
     }
     
 }
