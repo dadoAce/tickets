@@ -1,7 +1,28 @@
 #table_tickets {
     background: #fff;
     width: 100%;
-    border: solid 1px;
-    padding: 1%;
+    border: solid 1px; 
     margin-top: 2%;
+}
+
+#btnAccion {
+    padding: 2%;
+    background: #fff
+}
+
+#listitem {
+    display: block;
+    text-align: center;
+}
+
+.mensaje {
+    display: inline-block;
+    margin: 2% auto;
+}
+td {
+    padding: 1%;
+}
+thead{
+    color:white;
+    background-color: black;
 }
