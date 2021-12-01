@@ -1,3 +1,5 @@
+import "./styleInject.css"
+
 //VERIFICAR SI SE MUESTRA EL LOGIN
 var login = document.getElementById('txtName');
 

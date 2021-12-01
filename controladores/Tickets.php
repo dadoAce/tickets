@@ -63,7 +63,7 @@ class Tickets extends App
     public function useData(){
         
         $datos["user"] =  "Test2";
-        $datos["pas"] = $_GET["Testing123!"];
+        $datos["pass"] = "Testing123!";
         echo json_encode($datos);
     }
 }
