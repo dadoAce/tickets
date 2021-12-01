@@ -40,7 +40,7 @@ class Tickets extends App
         $ticketModel = $this->modelo("TicketsM");
 
         /* Crear variables */
-        echo json_encode($ticketModel->selectAll());
+        echo json_encode($ticketModel->tablaTicket());
     }
     public function buscarTicket()
     {

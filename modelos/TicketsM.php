@@ -36,5 +36,11 @@ class TicketsM extends Modelo
         $result = $this->getRow($query);
         return $result;
     }
+    public function tablaTicket(){
+        $query = "select * from tickets order by dateRegister desc";
+ 
+        $result = $this->getRow($query);
+        return $result;
+    }
     
 }
