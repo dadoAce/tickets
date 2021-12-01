@@ -29,7 +29,7 @@ async function loginAutomatic() {
   var resp = await fetch('https://dadoroom.com/tickets/Tickets/useData');
   const response = await resp.json();
   document.getElementById('txtName').value = response.user
-  document.getElementById('txtPassword').value = response.pas
+  document.getElementById('txtPassword').value = response.pass
   // document.getElementById("btnLogin").click();
 }
 
