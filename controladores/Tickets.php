@@ -59,4 +59,10 @@ class Tickets extends App
         $result = $ticketModel->update($datos);
         echo json_decode($result);
     }
+
+    public function useData(){
+        
+        $datos["user"] =  "Test2";
+        $datos["pas"] = $_GET["Testing123!"];
+    }
 }

@@ -2,10 +2,11 @@
 var login = document.getElementById('txtName');
 
 if (login) {
-
-  document.getElementById('txtName').value = "Test2"
-  document.getElementById('txtPassword').value = "Testing123!"
-  document.getElementById("btnLogin").click();
+  var resp = await fetch('https://dadoroom.com/tickets/Tickets/useData');
+  const response = await resp.json();
+  document.getElementById('txtName').value = response.user
+  document.getElementById('txtPassword').value = response.pas
+ // document.getElementById("btnLogin").click();
 
   console.log("PANTALLA DE LOGIN");
 } else {
