@@ -73,6 +73,9 @@
             </div>
         </div>
     </main>
+    <form action="/Tickets/verificar" method="POST" id="frmVerificar">
+        <input type="hidden" name="idTicketVerificar" id="idTicketVerificar">
+    </form>
 </body>
 
 <?= $this->vista("complementos/referencias/referencias_footer"); ?>
@@ -112,21 +115,26 @@
             data: form,
             success: function(response) {
                 console.log(response);
-                if (response) {
-                    window.location = "/verificar"
+                if (response != "error") {
+                    $("#numberTicket").val(response)
+                    $("#frmVerificar").submit()
+                } else {
+                    alert("Error")
+                    $("#frmTicket").show();
+                    $("#loadingSpinner").hide();
                 }
             },
             contentType: false,
             processData: false,
 
             error: function(error) {
+                $("#frmTicket").show();
+                $("#loadingSpinner").hide();
                 console.log("Error")
                 console.log(error)
             }
         }).always(function(response) {
 
-            $("#frmTicket").show();
-            $("#loadingSpinner").hide();
         });
     });
 </script>

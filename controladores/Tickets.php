@@ -18,7 +18,10 @@ class Tickets extends App
     }
     public function verificar()
     {/* Vista */
-        $this->vista("tickets/verificar");
+        $ticketModel = $this->modelo("TicketsM");
+        $idTicket = $_POST["idTicketVerificar"];
+        $datos["ticket"] = $ticketModel->find($idTicket);
+        $this->vista("tickets/verificar", $datos);
     }
     public function tablaTicket()
     {/* Vista */
@@ -34,8 +37,12 @@ class Tickets extends App
         $datos["dateRegister"] =  date("Y-m-d H:i:s");
         $ticketModel = $this->modelo("TicketsM");
         $ticketModel->save($datos);
-
-        header("Location: " . $this->base_url("Validar"));
+        if ($ticketModel || $ticketModel != null) {
+            echo $ticketModel;
+        } else {
+            echo "error";
+        }
+        //header("Location: " . $this->base_url("Validar"));
     }
     public function tabla()
     {
