@@ -90,9 +90,9 @@ class Modelo extends App
         $values = substr($values, 0, -1);
         $query = "UPDATE $this->tabla set $values where $this->pk =" . $datos[$this->pk];
         $result = $this->query($query);
-        if($result){
+        if ($result) {
             return true;
-        } 
+        }
     }
 
     /* Metodos Secundarios */
@@ -153,7 +153,12 @@ class Modelo extends App
     {
 
         $result = $this->getQuery($query);
-        return $result[0];
+        if ($result != null) {
+
+            return $result[0];
+        } else {
+            return null;
+        }
     }
 
     public function verEntidad($arreglo)

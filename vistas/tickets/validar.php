@@ -71,11 +71,14 @@
             <div id="loadingSpinner" class="spinner-border text-primary" role="status" style="display: none;">
                 <span class="sr-only">Loading...</span>
             </div>
+            <div id="divVerificar"></div>
         </div>
     </main>
     <form action="Tickets/verificar" method="POST" id="frmVerificar">
         <input type="hidden" name="idTicketVerificar" id="idTicketVerificar">
     </form>
+    
+
 </body>
 
 <?= $this->vista("complementos/referencias/referencias_footer"); ?>
@@ -116,13 +119,19 @@
             success: function(response) {
                 console.log("Respuesta:");
                 console.log(response);
-                if (response != "error") {
-                    $("#idTicketVerificar").val(response)
-                    $("#frmVerificar").submit()
-                } else {
+                if (response == "ya registrado") {
+                    $("#idTicketVerificar").val($("#numberTicket").val())
+                   $("#frmVerificar").submit()
+
+                } else
+                if (response == "error") {
                     alert("Error")
                     $("#frmTicket").show();
                     $("#loadingSpinner").hide();
+                } else { 
+                    //$("#idTicketVerificar").val(response)
+                    $("#idTicketVerificar").val($("#numberTicket").val())
+                    $("#frmVerificar").submit()
                 }
             },
             contentType: false,

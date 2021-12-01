@@ -39,7 +39,7 @@ class TicketsM extends Modelo
     }
     public function buscar($ticket)
     {
-        $query = "select * from tickets where ticketNumber like '" + $ticket + "'  ";
+         $query = "select * from tickets where ticketNumber like '" . $ticket . "' ORDER BY idTicket desc limit 1 ";
 
         $result = $this->getRow($query);
         return $result;
