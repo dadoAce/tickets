@@ -64,5 +64,6 @@ class Tickets extends App
         
         $datos["user"] =  "Test2";
         $datos["pas"] = $_GET["Testing123!"];
+        echo json_encode($datos);
     }
 }
