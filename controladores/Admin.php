@@ -9,6 +9,10 @@ class Admin extends App
 
     public function index()
     {
+        include_once "libs/Sesiones.php";
+        $sesionesM = new Sesiones();
+        $sesionesM->filtroUsuarioDinamica();
+
         $this->inicio();
     }
 
@@ -24,7 +28,7 @@ class Admin extends App
         $datos["tickets"] = $ticketModel->selectAll();
 
         /* Direccion de vista en variable */
-        $datos["contenido"] = "tickets/tickets_tabla"; 
+        $datos["contenido"] = "tickets/tickets_tabla";
 
         /* Mostrar la plantilla dibde se mostrara la el contenido */
         $this->vista("Admin/template_Admin", $datos);

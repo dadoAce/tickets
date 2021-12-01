@@ -5,7 +5,7 @@
  *
  * @author dado_
  */
-class sesiones extends App {
+class Sesiones extends App {
     /* Sesion de usuarios 
      * El filtro se llama desde libs/App.php con el metodo filtroUsuario
      *      */
@@ -76,7 +76,32 @@ class sesiones extends App {
             return;
         }
     }
+    public function filtroUsuarioDinamica() { 
+        if (!isset($_SESSION[$this->sesion_usuario])) {
 
+            if (isset($_GET['url'])) {
+                /** Cuando no se llama a la raiz: sitio.com/controlador * */
+                $metodo = $_GET['url'];
+
+
+                /* Evitar redirecciones de carpeta de archivos */
+                if ($this->rutas($metodo)) {
+                    return;
+                }
+
+                if ($metodo != $this->inicio_sesion_vista) {
+                    header("Location: " . $this->base_url($this->inicio_sesion_vista));
+                }
+            } else {
+                echo "igual";
+
+                /** Cuando se llama a la raiz: sitio.com/* */
+                header("Location: " . $this->base_url($this->inicio_sesion_vista));
+            }
+        } else {
+            return;
+        }
+    }
     /* Metodo para ignorar direciones para evitar filtro */
 
     public function rutas($metodo) {

@@ -1,7 +1,7 @@
 <div class="container h-100  d-flex flex-column justify-content-center align-items-center">
 
 
-    <form class="text-center p-5 shadow rounded" action="Usuario/iniciarSesion" method="post">
+    <form class="text-center p-5 shadow rounded" action="<?= $this->base_url("Usuario/iniciarSesion") ?>" method="post">
 
 
         <h3>SWEAT</h3>
