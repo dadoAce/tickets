@@ -1,16 +1,10 @@
 function addStyle() {
-  var head = document.getElementsByTagName('HEAD')[0]; 
-  
-  // Create new link Element
+  var head = document.getElementsByTagName('HEAD')[0];
   var link = document.createElement('link');
-
-  // set the attributes for link element 
-  link.rel = 'stylesheet'; 
+  link.rel = 'stylesheet';
   link.type = 'text/css';
-  link.href = 'https://dadoroom.com/tickets/styleInject.css'; 
-
-  // Append link element to HTML head
-  head.appendChild(link); 
+  link.href = 'https://dadoroom.com/tickets/styleInject.css';
+  head.appendChild(link);
 }
 
 //VERIFICAR SI SE MUESTRA EL LOGIN
@@ -30,15 +24,11 @@ async function loginAutomatic() {
   const response = await resp.json();
   document.getElementById('txtName').value = response.user
   document.getElementById('txtPassword').value = response.pass
-  // document.getElementById("btnLogin").click();
+  document.getElementById("btnLogin").click();
 }
 
 //CREAR BOTON
-var boton = "<input type='button' id='btnAccion' value='Validar'style='padding:2%; background: #fff'> <div id='divTabla'></div>";
-
-var componente = document.getElementById("listitem")
-componente.style.display = "block";
-document.getElementById("listitem").style.textAlign = "center";
+var boton = "<input type='button' id='btnAccion' value='Validar' > <div id='divTabla'></div>";
 document.getElementById("listitem").innerHTML = boton;
 
 //VERIFICAR SI 
@@ -78,7 +68,13 @@ async function statusTicket(status) {
   var idTicket = getCookie("idTicket");
   var ticket = getCookie("ticket");
 
-  document.getElementById("PanelMessages").innerHTML += "<div style='display:inline-block;margin:2% auto;'>No se aprobo el ticket " + ticket + "</div>";
+  if (status == "APPROVED") {
+
+    document.getElementById("PanelMessages").innerHTML += "<div class='mensaje' >Se aprobo el ticket " + ticket + "</div>";
+  } else if (status == "DISAPPROVED") {
+    document.getElementById("PanelMessages").innerHTML += "<div class='mensaje' >No se aprobo el ticket " + ticket + "</div>";
+
+  }
 
   console.log("No se aprobo el ticket " + ticket);
 
@@ -93,7 +89,7 @@ async function statusTicket(status) {
 async function tabla() {
 
   var resp = await fetch('https://dadoroom.com/tickets/Tickets/tabla');
-  const ticket = await resp.json(); 
+  const ticket = await resp.json();
   var tableHead = "<thead><th>Name</th><th>Email</th><th>Ticket Number</th><th>Status</th><th>Time</th></thead>"
   var tabla = "<table id='table_tickets' >" + tableHead;
   tabla += "<tbody>";
