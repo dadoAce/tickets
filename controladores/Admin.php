@@ -24,9 +24,9 @@ class Admin extends App
         $datos["tickets"] = $ticketModel->selectAll();
 
         /* Direccion de vista en variable */
-        $vista["contenido"] = $this->vista("tickets/tickets_tabla", $datos);
+        $datos["contenido"] = "tickets/tickets_tabla"; 
 
         /* Mostrar la plantilla dibde se mostrara la el contenido */
-        $this->vista("Admin/template_Admin", $vista);
+        $this->vista("Admin/template_Admin", $datos);
     }
 }

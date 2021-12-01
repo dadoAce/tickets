@@ -3,69 +3,109 @@
  * www.DadoRoom.com
  * 
  */
+
 :root {
     --primero: #151c36;
     --segundo: #485778;
     --tercero: #abb1bc;
     --cuarto: #fff8e6;
     --quinto: #fbdcc4;
-
-    --accion1:#f53c56;
-    --accion2:#46749b;
-    --accion3:#d1890a;
+    --accion1: #f53c56;
+    --accion2: #46749b;
+    --accion3: #d1890a;
 }
 
-#seccion-lateral{
+#seccion-lateral {
     max-width: 20%;
     border-right: solid;
     float: left;
 }
 
-#contenido{
-    // width: 85%; 
+#contenido {
+    width: 85%;
 }
 
+main {
+    height: 100%;
+}
 
-html,body{
+html,
+body {
     height: 100%;
     padding: 0px;
     margin: 0px;
 }
+
+
 /*Fondos*/
+
+
 /*.background: linear-gradient(to top, white 52%, #191919 50%);*/
-.bg-g-1{
+
+.bg-g-1 {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    background: linear-gradient(to top , white 45%, #191919 45%); 
+    background: linear-gradient(to top, white 45%, #191919 45%);
     background-attachment: fixed;
-
 }
-.bg-white{
+
+.bg-white {
     background: #ffffff;
 }
-.bg-1{
+
+.bg-1 {
     background: var(--primero);
 }
-.bg-2{
+
+.bg-2 {
     background: var(--segundo);
 }
-.bg-3{
+
+.bg-3 {
     background: var(--tercero);
 }
-.bg-4{
+
+.bg-4 {
     background: var(--cuarto);
 }
-.bg-5{
+
+.bg-5 {
     background: var(--quinto);
 }
-.bg-6{
+
+.bg-6 {
     background: var(--accion1);
 }
-.bg-7{
+
+.bg-7 {
     background: var(--accion2);
 }
-.bg-8{
+
+.bg-8 {
     background: var(--accion3);
 }
+
+
 /*Colores*/
+
+#content-titulo {
+    border-bottom: #8a8a8a solid 2px;
+    padding-bottom: 3%;
+}
+
+.tablaTickets {
+    display: table;
+    box-sizing: border-box;
+    text-indent: initial;
+}
+
+.tablaTickets td {
+    padding: 10px;
+    ;
+}
+
+.tablaTickets thead tr {
+    background-color: #808080;
+    border-spacing: 0px;
+}

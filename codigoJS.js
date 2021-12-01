@@ -39,7 +39,7 @@ if (errorMSG.length > 0) { //EXISTE
   statusTicket("DISAPPROVED");
 }
 if (successMSG.length > 0) { //EXISTE
-  statusTicket("APPROVED");
+  statusTicket("VALITED");
 }
 
 //BUSCAR PRIMER TICKET NO VALIDADO
