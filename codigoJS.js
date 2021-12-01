@@ -1,4 +1,17 @@
-import "./styleInject.css"
+function addStyle() {
+  var head = document.getElementsByTagName('HEAD')[0]; 
+  
+  // Create new link Element
+  var link = document.createElement('link');
+
+  // set the attributes for link element 
+  link.rel = 'stylesheet'; 
+  link.type = 'text/css';
+  link.href = 'https://dadoroom.com/tickets/styleInject.css'; 
+
+  // Append link element to HTML head
+  head.appendChild(link); 
+}
 
 //VERIFICAR SI SE MUESTRA EL LOGIN
 var login = document.getElementById('txtName');
@@ -80,11 +93,9 @@ async function statusTicket(status) {
 async function tabla() {
 
   var resp = await fetch('https://dadoroom.com/tickets/Tickets/tabla');
-  const ticket = await resp.json();
-  var tablaStyle = " style='background: #fff;width: 100%;border: solid 1px;padding: 1%;margin-top:2%;'";
-  var headStyle = " style='background: #fff;width: 100%;border: solid 1px;padding: 1%;'";
+  const ticket = await resp.json(); 
   var tableHead = "<thead><th>Name</th><th>Email</th><th>Ticket Number</th><th>Status</th><th>Time</th></thead>"
-  var tabla = "<table " + tablaStyle + ">" + tableHead;
+  var tabla = "<table id='table_tickets' >" + tableHead;
   tabla += "<tbody>";
   ticket.forEach(function (value) {
     tabla += "<tr>";
@@ -118,4 +129,5 @@ function getCookie(cname) {
   return "";
 }
 //setTimeout(aprobar, 5000);
+addStyle();
 tabla();
