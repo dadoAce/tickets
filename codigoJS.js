@@ -90,22 +90,25 @@ async function tabla() {
 
   var resp = await fetch('https://dadoroom.com/tickets/Tickets/tabla');
   const ticket = await resp.json();
-  var tableHead = "<thead><th>Name</th><th>Email</th><th>Ticket Number</th><th>Status</th><th>Time</th></thead>"
-  var tabla = "<table id='table_tickets' >" + tableHead;
-  tabla += "<tbody>";
-  ticket.forEach(function (value) {
-    tabla += "<tr>";
+  if (ticket != null) {
 
-    tabla += "<td>" + value.name + "</td>";
-    tabla += "<td>" + value.email + "</td>";
-    tabla += "<td>" + value.ticketNumber + "</td>";
-    tabla += "<td>" + value.statusTicket + "</td>";
-    tabla += "<td>" + value.dateRegister + "</td>";
-    tabla += "</tr>";
-  });
-  tabla += "</tbody>"
-  tabla += "</table>"
-  document.getElementById("divTabla").innerHTML += tabla;
+    var tableHead = "<thead><th>Name</th><th>Email</th><th>Ticket Number</th><th>Status</th><th>Time</th></thead>"
+    var tabla = "<table id='table_tickets' >" + tableHead;
+    tabla += "<tbody>";
+    ticket.forEach(function (value) {
+      tabla += "<tr>";
+
+      tabla += "<td>" + value.name + "</td>";
+      tabla += "<td>" + value.email + "</td>";
+      tabla += "<td>" + value.ticketNumber + "</td>";
+      tabla += "<td>" + value.statusTicket + "</td>";
+      tabla += "<td>" + value.dateRegister + "</td>";
+      tabla += "</tr>";
+    });
+    tabla += "</tbody>"
+    tabla += "</table>"
+    document.getElementById("divTabla").innerHTML += tabla;
+  }
 
 }
 

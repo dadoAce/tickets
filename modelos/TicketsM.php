@@ -48,7 +48,7 @@ class TicketsM extends Modelo
     {
         $query = "select * from tickets order by dateRegister desc";
 
-        $result = $this->getRow($query);
+        $result = $this->getQuery($query);
         return $result;
     }
 }
