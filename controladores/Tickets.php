@@ -16,6 +16,10 @@ class Tickets extends App
     {/* Vista */
         $this->vista("tickets/validar");
     }
+    public function verificar()
+    {/* Vista */
+        $this->vista("tickets/verificar");
+    }
     public function tablaTicket()
     {/* Vista */
         $this->vista("validar/validar");
@@ -60,8 +64,9 @@ class Tickets extends App
         echo json_decode($result);
     }
 
-    public function useData(){
-        
+    public function useData()
+    {
+
         $datos["user"] =  "Test2";
         $datos["pass"] = "Testing123!";
         echo json_encode($datos);

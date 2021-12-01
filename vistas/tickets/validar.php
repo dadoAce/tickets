@@ -59,6 +59,10 @@
                     <label>TICKET NUMBER</label>
                     <input type="text" class="boton-estilo-1" name="numberTicket" id="numberTicket" placeholder="">
                 </div>
+                <div class="col-12">
+                    <label>REAPEAT TICKET NUMBER</label>
+                    <input type="text" class="boton-estilo-1" name="numberTicket2" id="numberTicket2" placeholder="">
+                </div>
                 <br>
 
                 <input id="btnSubmit" type="button" class="btn bg-2 text-white" value="SUBMIT">
@@ -91,6 +95,13 @@
             $("#numberTicket").addClass("invalid");
             return;
         }
+        if ($("#numberTicket").val() != $("#numberTicket2").val()) {
+            $("#numberTicket").addClass("invalid");
+            $("#numberTicket2").addClass("invalid");
+            alert("Ticket Numbers are different")
+            return;
+        }
+
         $("#frmTicket").hide();
         $("#loadingSpinner").show();
         var fd = document.getElementById("frmTicket");
@@ -102,7 +113,7 @@
             success: function(response) {
                 console.log(response);
                 if (response) {
-
+                    window.location = "/verificar"
                 }
             },
             contentType: false,
