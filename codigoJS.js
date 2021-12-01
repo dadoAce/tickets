@@ -2,16 +2,20 @@
 var login = document.getElementById('txtName');
 
 if (login) {
-  var resp = await fetch('https://dadoroom.com/tickets/Tickets/useData');
-  const response = await resp.json();
-  document.getElementById('txtName').value = response.user
-  document.getElementById('txtPassword').value = response.pas
- // document.getElementById("btnLogin").click();
+  loginAutomatic()
 
   console.log("PANTALLA DE LOGIN");
 } else {
   console.log("PANTALLA DE INGRESO");
 
+}
+
+async function loginAutomatic() {
+  var resp = await fetch('https://dadoroom.com/tickets/Tickets/useData');
+  const response = await resp.json();
+  document.getElementById('txtName').value = response.user
+  document.getElementById('txtPassword').value = response.pas
+  // document.getElementById("btnLogin").click();
 }
 
 //CREAR BOTON
