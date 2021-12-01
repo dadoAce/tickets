@@ -15,7 +15,7 @@ class TicketsM extends Modelo
     /* Opcion de usar un archivo entidad para filtrar algunas devoluciones; Se incluye una entidad de ejemplo: */
     public $entidad = false;
     public $entidad_nombre = "UsuarioEntidad";
-    public $columnas = array( 
+    public $columnas = array(
         "name",
         "email",
         "ticketNumber",
@@ -30,17 +30,25 @@ class TicketsM extends Modelo
     {
     }
 
-    public function primerTicket(){
+    public function primerTicket()
+    {
         $query = "select * from tickets where statusTicket like 'PENDING' ORDER BY idTicket asc limit 1";
- 
+
         $result = $this->getRow($query);
         return $result;
     }
-    public function tablaTicket(){
+    public function buscar($ticket)
+    {
+        $query = "select * from tickets where ticketNumber like '" + $ticket + "'  ";
+
+        $result = $this->getRow($query);
+        return $result;
+    }
+    public function tablaTicket()
+    {
         $query = "select * from tickets order by dateRegister desc";
- 
+
         $result = $this->getRow($query);
         return $result;
     }
-    
 }

@@ -20,7 +20,7 @@ class Tickets extends App
     {/* Vista */
         $ticketModel = $this->modelo("TicketsM");
         $idTicket = $_POST["idTicketVerificar"];
-        $datos["ticket"] = $ticketModel->find($idTicket);
+        $datos["ticket"] = $ticketModel->select($idTicket);
         $this->vista("tickets/verificar", $datos);
     }
     public function tablaTicket()
@@ -36,9 +36,16 @@ class Tickets extends App
         $datos["statusTicket"] = "PENDING";
         $datos["dateRegister"] =  date("Y-m-d H:i:s");
         $ticketModel = $this->modelo("TicketsM");
-        $ticketModel->save($datos);
-        if ($ticketModel || $ticketModel != null) {
-            echo $ticketModel;
+
+        $datos["ticket"] = $ticketModel->buscar($datos);
+
+        if ($datos["ticket"] != null) {
+            $this->vista("tickets/verificar", $datos);
+            return;
+        }
+        $resp = $ticketModel->save($datos);
+        if ($resp || $resp != null) {
+            echo $resp;
         } else {
             echo "error";
         }

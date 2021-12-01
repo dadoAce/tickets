@@ -73,7 +73,7 @@
             </div>
         </div>
     </main>
-    <form action="/Tickets/verificar" method="POST" id="frmVerificar">
+    <form action="Tickets/verificar" method="POST" id="frmVerificar">
         <input type="hidden" name="idTicketVerificar" id="idTicketVerificar">
     </form>
 </body>
@@ -114,9 +114,10 @@
             type: 'post',
             data: form,
             success: function(response) {
+                console.log("Respuesta:");
                 console.log(response);
                 if (response != "error") {
-                    $("#numberTicket").val(response)
+                    $("#idTicketVerificar").val(response)
                     $("#frmVerificar").submit()
                 } else {
                     alert("Error")
