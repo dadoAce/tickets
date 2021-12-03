@@ -13,7 +13,21 @@ class Usuario extends App
 
     public function iniciarSesion()
     {
-       echo "Prueba";
+        /* Llamar a clases */
+        require_once "libs/sesiones.php";
+        
+
+        /* Instanciar Clases creando objetos */
+        $sesion = new sesiones();
+        $usuarioModel = $this->modelo("UsuarioModel");
+        
+        /* Obtener los datos del formulario de inicio de sesion; Guardarlos en un arreglo */
+        $datos["usuario"] = $_POST["usuario"];
+        $datos["password"] = $_POST["password"];
+        /* Mander el arreglo y buscar en la base de datos */
+        $result = $usuarioModel->iniciarSesion($datos);
+
+        
     }
  
     public function cerrarSesion()
