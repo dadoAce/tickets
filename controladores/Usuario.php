@@ -14,7 +14,7 @@ class Usuario extends App
     public function iniciarSesion()
     {
         /* Llamar a clases */
-        require_once "libs/sesiones.php";
+        require_once "libs/Sesiones.php";
         
 
         /* Instanciar Clases creando objetos */
@@ -27,7 +27,20 @@ class Usuario extends App
         /* Mander el arreglo y buscar en la base de datos */
         $result = $usuarioModel->iniciarSesion($datos);
 
-        
+        if ($result != null) {
+            /* Guardar valores en una sesion */
+            $sesion->setUsuarioSesion($result);
+
+            if ($result["rol_usuario"]) {
+                /* Si es Cliente */
+                header("Location: " . $this->base_url("Usuario"));
+            } else {/* si es admin */
+                header("Location: " . $this->base_url("Admin"));
+            }
+        } else {
+            /* Si no se encontro el usuario  en la base de datos */
+            header("Location: " . $this->base_url("Home"));
+        }
     }
  
     public function cerrarSesion()
