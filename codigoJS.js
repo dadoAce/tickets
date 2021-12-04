@@ -37,13 +37,15 @@ async function loginAutomatic() {
 
 //CREAR 
 var boton;
-if (getCookie("ticket") == "true") {
+if (getCookie("automatico") == "true" || getCookie("automatico") == true) {
   boton = "<input type='button' id='btnDesactivar' value='Desactivar' class='btn btn-warning'> <div id='divTabla' class='container'></div>";
 } else {
   boton = "<input type='button' id='btnActivar' value='Activar' class='btn btn-warning'> <div id='divTabla' class='container'></div>";
 
 }
-document.getElementById("listitem").innerHTML = boton;
+var componente = document.getElementById("listitem")
+componente.innerHTML = boton;
+componente.style.display = "block";
 
 //VERIFICAR SI 
 var errorMSG = document.getElementsByClassName('red');
@@ -58,8 +60,10 @@ if (successMSG.length > 0) { //EXISTE
 
 //BUSCAR PRIMER TICKET NO VALIDADO
 async function recargar() {
+  console.log("Recargar")
   var resp = await fetch('https://dadoroom.com/tickets/Tickets/buscarTicket');
   const ticket = await resp.json();
+  console.log(ticket)
   if (ticket != null) {
 
     console.log(ticket)
@@ -72,14 +76,15 @@ async function recargar() {
     console.log("NO HAY TICKETS");
   }
 }
+console.log("automatico: " + getCookie("automatico"))
 
-if (getCookie("ticket") == "true") {
-
-  setTimeout(recargar, 5000);
+if (getCookie("automatico") == "true") {
+  
   document.getElementById("btnDesactivar").onclick = function () {
     document.cookie = "automatico=false";
   };
-} else if (getCookie("ticket") == "false") {
+  setTimeout(recargar, 5000);
+} else {
   document.getElementById("btnActivar").onclick = function () {
     document.cookie = "automatico=true";
   };
