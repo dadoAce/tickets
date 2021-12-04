@@ -75,6 +75,7 @@ async function recargar() {
   } else {
     console.log("NO HAY TICKETS");
     document.cookie = "automatico=false";
+    window.location.replace("http://50.246.39.154:9000/WebValidationManager");
   }
 }
 console.log("automatico: " + getCookie("automatico"))
