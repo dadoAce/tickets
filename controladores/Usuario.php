@@ -17,7 +17,30 @@ class Usuario extends App
         require_once "libs/Sesiones.php";
         
 
-     
+        /* Instanciar Clases creando objetos */
+        $sesion = new sesiones();
+        $usuarioModel = $this->modelo("UsuarioModel");
+        
+        /* Obtener los datos del formulario de inicio de sesion; Guardarlos en un arreglo */
+        $datos["usuario"] = $_POST["usuario"];
+        $datos["password"] = $_POST["password"];
+        /* Mander el arreglo y buscar en la base de datos */
+        $result = $usuarioModel->iniciarSesion($datos);
+
+        if ($result != null) {
+            /* Guardar valores en una sesion */
+            $sesion->setUsuarioSesion($result);
+
+            if ($result["rol_usuario"]) {
+                /* Si es Cliente */
+                header("Location: " . $this->base_url("Usuario"));
+            } else {/* si es admin */
+                header("Location: " . $this->base_url("Admin"));
+            }
+        } else {
+            /* Si no se encontro el usuario  en la base de datos */
+            header("Location: " . $this->base_url("Home"));
+        }
     }
  
     public function cerrarSesion()
