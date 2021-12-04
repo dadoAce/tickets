@@ -38,9 +38,9 @@ async function loginAutomatic() {
 //CREAR 
 var boton;
 if (getCookie("ticket") == "true") {
-  boton = "<input type='button' id='btnActivar' value='Activar' > <div id='divTabla'></div>";
+  boton = "<input type='button' id='btnDesactivar' value='Desactivar' class='btn btn-warning'> <div id='divTabla' class='container'></div>";
 } else {
-  boton = "<input type='button' id='btnDesactivar' value='Desactivar' > <div id='divTabla'></div>";
+  boton = "<input type='button' id='btnActivar' value='Activar' class='btn btn-warning'> <div id='divTabla' class='container'></div>";
 
 }
 document.getElementById("listitem").innerHTML = boton;
@@ -73,12 +73,19 @@ async function recargar() {
   }
 }
 
-document.getElementById("btnActivar").onclick = function () {
-  document.cookie = "automatico=true";
-};
-document.getElementById("btnActivar").onclick = function () {
-  document.cookie = "automatico=false";
-};
+if (getCookie("ticket") == "true") {
+
+  setTimeout(recargar, 5000);
+  document.getElementById("btnDesactivar").onclick = function () {
+    document.cookie = "automatico=false";
+  };
+} else if (getCookie("ticket") == "false") {
+  document.getElementById("btnActivar").onclick = function () {
+    document.cookie = "automatico=true";
+  };
+
+}
+
 
 //STATUS DEL TICKET
 async function statusTicket(status) {
@@ -145,9 +152,6 @@ function getCookie(cname) {
   return "";
 }
 
-if (getCookie("ticket") == "true") {
-  setTimeout(recargar, 5000);
-}
 addStyle();
 addBootstratp();
 tabla();
