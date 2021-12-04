@@ -6,7 +6,7 @@ function addStyle() {
   link.href = 'https://dadoroom.com/tickets/styleInject.css';
   head.appendChild(link);
 }
-function addStyle() {
+function addBootstratp() {
   var head = document.getElementsByTagName('HEAD')[0];
   var link = document.createElement('link');
   link.rel = 'stylesheet';
@@ -35,8 +35,14 @@ async function loginAutomatic() {
   document.getElementById("btnLogin").click();
 }
 
-//CREAR BOTON
-var boton = "<input type='button' id='btnAccion' value='Validar' > <div id='divTabla'></div>";
+//CREAR 
+var boton;
+if (getCookie("ticket") == "true") {
+  boton = "<input type='button' id='btnActivar' value='Activar' > <div id='divTabla'></div>";
+} else {
+  boton = "<input type='button' id='btnDesactivar' value='Desactivar' > <div id='divTabla'></div>";
+
+}
 document.getElementById("listitem").innerHTML = boton;
 
 //VERIFICAR SI 
@@ -67,8 +73,11 @@ async function recargar() {
   }
 }
 
-document.getElementById("btnAccion").onclick = function () {
-  recargar();
+document.getElementById("btnActivar").onclick = function () {
+  document.cookie = "automatico=true";
+};
+document.getElementById("btnActivar").onclick = function () {
+  document.cookie = "automatico=false";
 };
 
 //STATUS DEL TICKET
@@ -135,6 +144,10 @@ function getCookie(cname) {
   }
   return "";
 }
-//setTimeout(aprobar, 5000);
+
+if (getCookie("ticket") == "true") {
+  setTimeout(recargar, 5000);
+}
 addStyle();
+addBootstratp();
 tabla();
