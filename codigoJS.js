@@ -74,12 +74,13 @@ async function recargar() {
     document.getElementById("btnSendODSRequest").click();
   } else {
     console.log("NO HAY TICKETS");
+    document.cookie = "automatico=false";
   }
 }
 console.log("automatico: " + getCookie("automatico"))
 
 if (getCookie("automatico") == "true") {
-  
+
   document.getElementById("btnDesactivar").onclick = function () {
     document.cookie = "automatico=false";
   };
@@ -130,7 +131,7 @@ async function tabla() {
       tabla += "<td>" + value.name + "</td>";
       tabla += "<td>" + value.email + "</td>";
       tabla += "<td>" + value.ticketNumber + "</td>";
-      tabla += "<td>" + value.statusTicket + "</td>";
+      tabla += "<td class='" + value.statusTicket + "'>" + value.statusTicket + "</td>";
       tabla += "<td>" + value.dateRegister + "</td>";
       tabla += "</tr>";
     });

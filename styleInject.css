@@ -27,3 +27,13 @@ thead{
     color:white;
     background-color: black;
 }
+
+.DISAPPROVED{
+    color:rgb(255, 0, 0);
+}
+.VALITED{
+    color:rgb(29, 172, 0);
+}
+.PENDING{
+    color:rgb(0, 17, 255);
+}
