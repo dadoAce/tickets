@@ -43,3 +43,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+@media(max-width:512px){
+    #menu-lateral-1{
+        display: none;
+    } 
+}

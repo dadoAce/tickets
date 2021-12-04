@@ -109,3 +109,9 @@ body {
     background-color: #808080;
     border-spacing: 0px;
 }
+
+@media(max-width:512px) {
+    #contenido {
+        width: 100%;
+    }
+}
