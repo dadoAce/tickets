@@ -31,9 +31,11 @@ class Tickets extends App
 
     public function registrarTicket()
     {
+        $numero = $_POST["numberTicket"];
+        $numero = substr($numero, 2);
         $datos["name"] = $_POST["name"];
         $datos["email"] = $_POST["email"];
-        $datos["ticketNumber"] = $_POST["numberTicket"];
+        $datos["ticketNumber"] = $numero;
         $datos["statusTicket"] = "PENDING";
         $datos["dateRegister"] =  date("Y-m-d H:i:s");
         $ticketModel = $this->modelo("TicketsM");
