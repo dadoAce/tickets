@@ -31,6 +31,6 @@ class Admin extends App
         $datos["contenido"] = "tickets/tickets_tabla";
 
         /* Mostrar la plantilla dibde se mostrara la el contenido */
-        $this->vista("Admin/template_Admin", $datos);
+        $this->vista("admin/template_Admin", $datos);
     }
 }
