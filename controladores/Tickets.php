@@ -18,12 +18,17 @@ class Tickets extends App
     }
     public function verificar()
     {/* Vista */
-        $numero = $_POST["idTicketVerificar"];
-        $numero = substr($numero, 2);
-        $ticketModel = $this->modelo("TicketsM");
-        $idTicket = $numero;
-        $datos["ticket"] = $ticketModel->buscar($idTicket);
-        $this->vista("tickets/verificar", $datos);
+        if (isset($_POST["idTicketVerificar"])) {
+
+            $numero = $_POST["idTicketVerificar"];
+            $numero = substr($numero, 2);
+            $ticketModel = $this->modelo("TicketsM");
+            $idTicket = $numero;
+            $datos["ticket"] = $ticketModel->buscar($idTicket);
+            $this->vista("tickets/verificar", $datos);
+        } else {
+            header("Location: " . $this->base_url(""));
+        }
     }
     public function tablaTicket()
     {/* Vista */
@@ -41,7 +46,7 @@ class Tickets extends App
         $datos["dateRegister"] =  date("Y-m-d H:i:s");
         $ticketModel = $this->modelo("TicketsM");
 
-        $ticket = $ticketModel->buscar($datos["ticketNumber"]);
+        $ticket = $ticketModel->buscar($numero);
 
 
         if ($ticket != null) {
