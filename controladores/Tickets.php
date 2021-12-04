@@ -18,9 +18,10 @@ class Tickets extends App
     }
     public function verificar()
     {/* Vista */
+        $numero = $_POST["idTicketVerificar"];
+        $numero = substr($numero, 2);
         $ticketModel = $this->modelo("TicketsM");
-        $idTicket = $_POST["idTicketVerificar"];
-        $idTicket = $_POST["idTicketVerificar"];
+        $idTicket = $numero;
         $datos["ticket"] = $ticketModel->buscar($idTicket);
         $this->vista("tickets/verificar", $datos);
     }
