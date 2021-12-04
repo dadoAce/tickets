@@ -6,6 +6,14 @@ function addStyle() {
   link.href = 'https://dadoroom.com/tickets/styleInject.css';
   head.appendChild(link);
 }
+function addStyle() {
+  var head = document.getElementsByTagName('HEAD')[0];
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = 'https://dadoroom.com/tickets/assets/local/bootstrap.min.css';
+  head.appendChild(link);
+}
 
 //VERIFICAR SI SE MUESTRA EL LOGIN
 var login = document.getElementById('txtName');
@@ -93,7 +101,7 @@ async function tabla() {
   if (ticket != null) {
 
     var tableHead = "<thead><th>Name</th><th>Email</th><th>Ticket Number</th><th>Status</th><th>Time</th></thead>"
-    var tabla = "<table id='table_tickets' >" + tableHead;
+    var tabla = "<table id='table_tickets' class='table' >" + tableHead;
     tabla += "<tbody>";
     ticket.forEach(function (value) {
       tabla += "<tr>";

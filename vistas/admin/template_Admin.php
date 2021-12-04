@@ -13,9 +13,9 @@
         <!--MENU LATERAL-->
         <?php $this->vista("complementos/menus/menuPrincipal"); ?>
         <section id="contenido" class=" d-flex flex-column justify-content-center align-items-center     pl-2 pr-2">
-            <div id="content-titulo" class="w-100 p-3">
+            <div id="content-titulo" class="w-100 p-3 d-flex justify-content-between ">
                 <h6>Submitted Tickets</h6>
-                <form action="<?= $this->base_url("Usuarios/cerrarSesion") ?>">
+                <form action="<?= $this->base_url("Usuario/cerrarSesion") ?>" method="GET" style="margin-bottom: -0.5rem;">
                     <input type="submit" value="Log Out" class="btn">
                 </form>
             </div>
