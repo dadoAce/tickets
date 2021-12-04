@@ -25,7 +25,7 @@ class Admin extends App
         $ticketModel = $this->modelo("TicketsM");
 
         /* Crear variables */
-        $datos["tickets"] = $ticketModel->selectAll();
+        $datos["tickets"] = $ticketModel->tablaTicket();
 
         /* Direccion de vista en variable */
         $datos["contenido"] = "tickets/tickets_tabla";
