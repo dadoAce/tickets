@@ -58,26 +58,25 @@ if (successMSG.length > 0) { //EXISTE
   statusTicket("VALITED");
 }
 
-//BUSCAR PRIMER TICKET NO VALIDADO
-async function recargar() {
-  console.log("Recargar")
-  var resp = await fetch('https://dadoroom.com/tickets/Tickets/buscarTicket');
-  const ticket = await resp.json();
-  console.log(ticket)
-  if (ticket != null) {
+//BUSCAR PRIMER TICKET NO VALIDADO 
+console.log("Recargar")
+var resp = await fetch('https://dadoroom.com/tickets/Tickets/buscarTicket');
+const ticket = await resp.json();
+console.log(ticket)
+if (ticket != null) {
 
-    console.log(ticket)
-    console.log(ticket.ticketNumber)
-    document.getElementById("txtCardNr").value = ticket.ticketNumber;
-    document.cookie = "idTicket=" + ticket.idTicket;
-    document.cookie = "ticket=" + ticket.ticketNumber;
-    document.getElementById("btnSendODSRequest").click();
-  } else {
-    console.log("NO HAY TICKETS");
-    document.cookie = "automatico=false";
-    window.location.replace("http://50.246.39.154:9000/WebValidationManager");
-  }
+  console.log(ticket)
+  console.log(ticket.ticketNumber)
+  document.getElementById("txtCardNr").value = ticket.ticketNumber;
+  document.cookie = "idTicket=" + ticket.idTicket;
+  document.cookie = "ticket=" + ticket.ticketNumber;
+  document.getElementById("btnSendODSRequest").click();
+} else {
+  console.log("NO HAY TICKETS");
+  document.cookie = "automatico=false";
+  window.location.replace("http://50.246.39.154:9000/WebValidationManager");
 }
+
 console.log("automatico: " + getCookie("automatico"))
 
 if (getCookie("automatico") == "true") {

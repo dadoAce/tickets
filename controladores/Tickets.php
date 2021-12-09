@@ -93,8 +93,11 @@ class Tickets extends App
     public function useData()
     {
 
-        $datos["user"] =  "Test2";
-        $datos["pass"] = "Testing123!";
+        $ticketModel = $this->modelo("TicketsM");
+        $result = $ticketModel->userAdmin(); 
+ 
+        $datos["user"] =  $result["user"];
+        $datos["pass"] = $result["pass"];
         echo json_encode($datos);
     }
 }

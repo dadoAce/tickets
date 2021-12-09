@@ -10,9 +10,9 @@
 <body class="">
     <main class="main-principal h-100">
 
-        <!--MENU LATERAL--> 
+        <!--MENU LATERAL-->
         <!--CONTENIDO-->
-        <section id="contenido" class=" h-100 d-flex justify-content-center ">
+        <section class=" h-100 d-flex justify-content-center ">
             <?php $this->vista("principal/secciones/inicioSesion"); ?>
         </section>
     </main>

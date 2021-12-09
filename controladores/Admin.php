@@ -31,6 +31,57 @@ class Admin extends App
         $datos["contenido"] = "tickets/tickets_tabla";
 
         /* Mostrar la plantilla dibde se mostrara la el contenido */
-        $this->vista("admin/template_Admin", $datos);
+        $this->vista("admin/Admin_Dashboard", $datos);
+    }
+    public function Register()
+    {
+        /* Mostrar la plantilla dibde se mostrara la el contenido */
+        $this->vista("admin/Admin_Register");
+    }
+    public function Settings()
+    {
+        /* Mostrar la plantilla dibde se mostrara la el contenido */
+        $this->vista("admin/Admin_Settings");
+    }
+
+    public function changeUser()
+    {
+
+        if (!isset($_POST["username"])) {
+            echo "Error";
+            return;
+        }
+        if (!isset($_POST["pass"])) {
+            echo "Error";
+            return;
+        }
+        if ($_POST["username"] == "" || $_POST["pass"] == "") {
+            echo "Error";
+            return;
+        }
+
+        $user = $_POST["username"];
+        $pass = $_POST["pass"];
+        $ticketModel = $this->modelo("TicketsM");
+        $result = $ticketModel->editUserAdmir($user, $pass);
+        if ($result) {
+            echo "true";
+        } else {
+            echo "Error";
+        }
+        /* Mostrar la plantilla dibde se mostrara la el contenido */
+    }
+    public function changeUser2()
+    {
+
+
+
+        $ticketModel = $this->modelo("TicketsM");
+        $result = $ticketModel->userAdmin();
+
+        $datos["user"] =  $result["user"];
+        $datos["pass"] = $result["pass"];
+        echo json_encode($datos);
+        /* Mostrar la plantilla dibde se mostrara la el contenido */
     }
 }

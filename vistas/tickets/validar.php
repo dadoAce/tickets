@@ -65,11 +65,14 @@
                 </div>
                 <br>
 
-                <input id="btnSubmit" type="button" class="btn bg-2 text-white" value="SUBMIT">
+                <input id="btnSubmit" type="button" class="btn-black" value="SUBMIT">
 
             </form>
             <div id="loadingSpinner" class="spinner-border text-primary" role="status" style="display: none;">
                 <span class="sr-only">Loading...</span>
+            </div>
+            <div id="msnSucces"   role="status" style="display: none;">
+                <span class="">Ticket has been successfully admitted</span>
             </div>
             <div id="divVerificar"></div>
         </div>
@@ -130,8 +133,10 @@
                     $("#loadingSpinner").hide();
                 } else { 
                     //$("#idTicketVerificar").val(response)
-                    $("#idTicketVerificar").val($("#numberTicket").val())
-                    $("#frmVerificar").submit()
+                    //$("#idTicketVerificar").val($("#numberTicket").val())
+                    //$("#frmVerificar").submit()
+                    $("#msnSucces").show("slow")
+                    $("#loadingSpinner").hide("slow");
                 }
             },
             contentType: false,

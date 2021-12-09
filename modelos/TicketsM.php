@@ -39,7 +39,7 @@ class TicketsM extends Modelo
     }
     public function buscar($ticket)
     {
-         $query = "select * from tickets where ticketNumber like '" . $ticket . "' ORDER BY idTicket desc limit 1 ";
+        $query = "select * from tickets where ticketNumber like '" . $ticket . "' ORDER BY idTicket desc limit 1 ";
 
         $result = $this->getRow($query);
         return $result;
@@ -49,6 +49,20 @@ class TicketsM extends Modelo
         $query = "select * from tickets order by dateRegister desc";
 
         $result = $this->getQuery($query);
+        return $result;
+    }
+    public function userAdmin()
+    {
+        $query = "select * from acceso where statusAcceso = 1 limit 1";
+ 
+        $result = $this->getRow($query);
+        return $result;
+    }
+    public function editUserAdmir($user, $pass)
+    {
+         $query = 'update acceso set user="' . $user . '", pass="' . $pass . '" where statusAcceso = 1';
+
+        $result = $this->query($query);
         return $result;
     }
 }
