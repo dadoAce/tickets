@@ -5,11 +5,11 @@
 
 
         <img id="imgLogo" src='<?= $this->base_url("assets/imgs/sistema/logo_large_dark.png") ?>'>
-        <label  >RIVER OAKS PARKING DASHBOARD</label>
+        <h2  class="d-block" >RIVER OAKS PARKING DASHBOARD</h2>
         <div class="  ">
 
             <label class="sub-label">USERNAME</label>
-            <input type="text" class="form-control   " name="usuario" id="usuario" placeholder="Usuario" value="">
+            <input type="text" class="form-control   " name="usuario" id="usuario" placeholder="username" value="">
         </div>
         <div class="  ">
             <label class="sub-label">PASSWORD</label>
