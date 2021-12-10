@@ -60,12 +60,12 @@
                     <input type="text" class="boton-estilo-1" name="numberTicket" id="numberTicket" placeholder="">
                 </div>
                 <div class="col-12">
-                    <label>REAPEAT TICKET NUMBER</label>
+                    <label>CONFIRM TICKET NUMBER:</label>
                     <input type="text" class="boton-estilo-1" name="numberTicket2" id="numberTicket2" placeholder="">
                 </div>
                 <br>
 
-                <input id="btnSubmit" type="button" class="btn-black" value="SUBMIT">
+                <input id="btnSubmit" type="button" class="btn-black p-3 pr-5 pl-5" value="SUBMIT">
 
             </form>
             <div id="loadingSpinner" class="spinner-border text-primary" role="status" style="display: none;">
