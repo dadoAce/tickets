@@ -5,7 +5,7 @@
 
 
         <img id="imgLogo" src='<?= $this->base_url("assets/imgs/sistema/logo_large_dark.png") ?>'>
-        <h2  class="d-block" >RIVER OAKS PARKING DASHBOARD</h2>
+        <h5  class="d-block" >RIVER OAKS PARKING DASHBOARD</h5>
         <div class="  ">
 
             <label class="sub-label">USERNAME</label>
