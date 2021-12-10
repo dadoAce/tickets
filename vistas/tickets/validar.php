@@ -45,6 +45,7 @@
             <form id="frmTicket" class="text-center p-5 shadow rounded" action="Tickets/registrarTicket" method="post">
 
 
+            <img id="imgLogo" src='<?= $this->base_url("assets/imgs/sistema/logo_large_dark.png") ?>'>
                 <h3>WELCOME TO SWEAT RIVER OAKS</h3>
                 <div class="col-12  ">
 
