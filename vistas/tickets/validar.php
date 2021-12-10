@@ -57,7 +57,7 @@
                     <input type="email" class="boton-estilo-1" name="email" id="email" placeholder="">
                 </div>
                 <div class="col-12">
-                    <label>TICKET NUMBER</label>
+                    <label>TICKET NUMBER:</label>
                     <input type="text" class="boton-estilo-1" name="numberTicket" id="numberTicket" placeholder="">
                 </div>
                 <div class="col-12">
