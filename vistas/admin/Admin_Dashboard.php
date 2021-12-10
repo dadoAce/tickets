@@ -28,7 +28,7 @@
         <a class="nav-link" href="<?= $this->base_url("Usuario/cerrarSesion") ?>">Log Out</a>
       </li>  
       <li class="nav-item">
-        <a class="nav-link" href="http://50.246.39.154:9000/WebValidationManager/">Parking WebSite</a>
+        <a class="nav-link" href="http://50.246.39.154:9000/WebValidationManager/">Parking Website</a>
       </li>  
         
     </ul> 
@@ -43,7 +43,7 @@
                 <h6 class="m-0 p-0 d-flex justify-content-end align-items-center">Submitted Tickets</h6>
                 <div class='d-flex'> 
                     
-                <a class=" btn-black-2 mr-3 d-none d-md-flex" href="http://50.246.39.154:9000/WebValidationManager/">Parking WebSite</a>
+                <a class=" btn-black-2 mr-3 d-none d-md-flex" href="http://50.246.39.154:9000/WebValidationManager/" style="line-height: 22px;">Parking Website</a>
 
   <form action="<?= $this->base_url("Usuario/cerrarSesion") ?>" method="GET" class="m-0 p-0 d-none d-md-flex justify-content-end align-items-end">
                     <input type="submit" value="Log Out" class="btn p-0 btn-transparent ">

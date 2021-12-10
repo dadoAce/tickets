@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= $this->vista("complementos/referencias/referencias"); ?>
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-</head> 
+</head>
 <style>
     label {
         width: 100%;
@@ -38,6 +38,7 @@
 
     }
 </style>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex d-sm-none">
         <a class="navbar-brand" href="#">SWEAT</a>
@@ -73,10 +74,12 @@
             <div class="pr-3 pl-3 w-100 pt-3">
                 <div class="  h-100  d-flex flex-column justify-content-center align-items-center">
 
- 
-                    <form id="frmTicket" class="text-center p-5 shadow rounded" action="Admin/changeUser" method="post">
 
- 
+                    <form id="frmTicket" class="text-center p-5 shadow rounded" action="Admin/changeUser" method="post">
+                        <div class="col-12">
+                            <label>Update the Designa Website Credentials Here:</label>
+                        </div>
+
                         <div class="col-12  ">
 
                             <label>Username:</label>
@@ -85,7 +88,7 @@
                         <div class="col-12  ">
                             <label>Password:</label>
                             <input type="email" class="boton-estilo-1" name="pass" id="pass" placeholder="">
-                        </div> 
+                        </div>
                         <br>
 
                         <input id="btnSubmit" type="button" class="btn-black" value="SUBMIT">
@@ -120,7 +123,7 @@
             $("#name").addClass("invalid");
             return;
 
-        }  
+        }
         /*
         if ($("#numberTicket").val() != $("#numberTicket2").val()) {
             $("#numberTicket").addClass("invalid");
@@ -141,13 +144,13 @@
                 console.log("Respuesta:");
                 console.log(response);
                 if (response == "true") {
-                    
+
                     $("#msnSucces").show("slow")
                     $("#loadingSpinner").hide("slow");
 
-                }   else { 
+                } else {
                     $("#idTicketVerificar").val($("#numberTicket").val())
-                   $("#frmVerificar").submit()
+                    $("#frmVerificar").submit()
                 }
             },
             contentType: false,
@@ -163,4 +166,4 @@
 
         });
     });
-</script> 
+</script>
