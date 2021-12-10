@@ -23,9 +23,7 @@
                         <td><?= $ticket["statusTicket"] ?></td>
                     </tr>
                 </tbody>
-            </table>
-            <input id="btnSubmit" type="button" class="btn bg-2 text-white" value="UPGRADE">
-
+            </table> 
             <div id="loadingSpinner" class="spinner-border text-primary" role="status" style="display: none;">
                 <span class="sr-only">Loading...</span>
             </div>

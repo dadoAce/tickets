@@ -73,7 +73,7 @@
                 <span class="sr-only">Loading...</span>
             </div>
             <div id="msnSucces"   role="status" style="display: none;">
-                <span class="">Ticket has been successfully admitted</span>
+                <span class="">Ticket has been successfully submitted.</span>
             </div>
             <div id="divVerificar"></div>
         </div>
