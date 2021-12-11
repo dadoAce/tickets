@@ -45,7 +45,7 @@
             <form id="frmTicket" class="text-center p-5 shadow rounded" action="Tickets/registrarTicket" method="post">
 
 
-            <img id="imgLogo" src='<?= $this->base_url("assets/imgs/sistema/logo_large_dark.png") ?>'>
+                <img id="imgLogo" src='<?= $this->base_url("assets/imgs/sistema/logo_large_dark.png") ?>'>
                 <h3>WELCOME TO SWEAT RIVER OAKS</h3>
                 <div class="col-12  ">
 
@@ -72,7 +72,8 @@
             <div id="loadingSpinner" class="spinner-border text-primary" role="status" style="display: none;">
                 <span class="sr-only">Loading...</span>
             </div>
-            <div id="msnSucces"   role="status" style="display: none;">
+            <div id="msnSucces" role="status" style="display: none;">
+                <img width="30" src="<?php echo $this->base_url("/assets/imgs/sistema/success.gif") ?>" class="rounded-circle bg-white">
                 <span class="">Ticket has been successfully submitted.</span>
             </div>
             <div id="divVerificar"></div>
@@ -81,7 +82,7 @@
     <form action="Tickets/verificar" method="POST" id="frmVerificar">
         <input type="hidden" name="idTicketVerificar" id="idTicketVerificar">
     </form>
-    
+
 
 </body>
 
@@ -125,14 +126,14 @@
                 console.log(response);
                 if (response == "ya registrado") {
                     $("#idTicketVerificar").val($("#numberTicket").val())
-                   $("#frmVerificar").submit()
+                    $("#frmVerificar").submit()
 
                 } else
                 if (response == "error") {
                     alert("Error")
                     $("#frmTicket").show();
                     $("#loadingSpinner").hide();
-                } else { 
+                } else {
                     //$("#idTicketVerificar").val(response)
                     //$("#idTicketVerificar").val($("#numberTicket").val())
                     //$("#frmVerificar").submit()
