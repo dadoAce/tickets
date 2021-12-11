@@ -2,8 +2,7 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>DadoRoom</title>
+    <meta charset="UTF-8"> 
     <?= $this->vista("complementos/referencias/referencias"); ?>
 </head>
 

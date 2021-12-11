@@ -2,8 +2,7 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Tickets</title>
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= $this->vista("complementos/referencias/referencias"); ?>
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">

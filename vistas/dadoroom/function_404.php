@@ -8,7 +8,7 @@ and open the template in the editor.
 
 <head>
     <meta charset="UTF-8">
-    <title>Aqui no hay nada :(</title>
+    <title>:(</title>
     <?= $this->vista("complementos/referencias/referencias"); ?>
 </head>
 
