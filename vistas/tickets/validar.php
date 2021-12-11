@@ -72,7 +72,7 @@
             <div id="loadingSpinner" class="spinner-border text-primary" role="status" style="display: none;">
                 <span class="sr-only">Loading...</span>
             </div>
-            <div id="msnSucces" role="status" style="display: none;">
+            <div id="msnSucces" role="status" style="display: none;" class="text-center">
                 <img width="30" src="<?php echo $this->base_url("/assets/imgs/sistema/success.gif") ?>" class="rounded-circle bg-white">
                 <span class="">Ticket has been successfully submitted.</span>
             </div>
