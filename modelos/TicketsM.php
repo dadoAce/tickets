@@ -71,7 +71,7 @@ class TicketsM extends Modelo
         $fecha = date("Y-m-d H:i:s");
         $query = "update usuarios set fecha_modificacion = $fecha when idUsuario = 1";
  
-        $result = $this->getRow($query);
+        $result = $this->query($query);
         return $result;
     }
 }
