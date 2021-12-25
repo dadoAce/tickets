@@ -84,4 +84,10 @@ class Admin extends App
         echo json_encode($datos);
         /* Mostrar la plantilla dibde se mostrara la el contenido */
     }
+
+    public function hola(){
+        
+        $ticketModel = $this->modelo("TicketsM");
+        $result = $ticketModel->pruebaCron();
+    }
 }

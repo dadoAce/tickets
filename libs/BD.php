@@ -60,7 +60,7 @@ class BD {
         mysqli_close($mysqli);
     }
 
-    function getMysqli() {
+    public function getMysqli() {
         return $this->mysqli;
     }
 

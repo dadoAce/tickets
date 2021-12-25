@@ -33,12 +33,13 @@ class Modelo extends App
          * Este metodo reccorre el arreglo $columnas en el Modelo, y compara con el arreglo $datos  
           Si el arreglo $datos contiene un nombre diferente, muestra el dato y termina el proceso
          *          */
+        $bdS = new BD();
         $cols = "";
         $values = "";
         foreach ($datos as $key => $v) {
             if (in_array($key, $this->columnas)) {
                 $cols .= "$key,";
-                $values .= "'$v',";
+                $values .= "' " . addslashes($v) . " ',";
             } else {
                 return "Error, valor $key no se encuentra";
             }

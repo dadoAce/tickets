@@ -132,12 +132,12 @@
                     alert("Error")
                     $("#frmTicket").show();
                     $("#loadingSpinner").hide();
-                } else {
-                    //$("#idTicketVerificar").val(response)
-                    //$("#idTicketVerificar").val($("#numberTicket").val())
-                    //$("#frmVerificar").submit()
+                }else if (response >0) {
                     $("#msnSucces").show("slow")
                     $("#loadingSpinner").hide("slow");
+                }  else {
+                    $("#frmTicket").show();
+                    $("#loadingSpinner").hide();
                 }
             },
             contentType: false,
