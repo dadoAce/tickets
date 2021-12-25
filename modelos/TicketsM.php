@@ -54,13 +54,13 @@ class TicketsM extends Modelo
     public function userAdmin()
     {
         $query = "select * from acceso where statusAcceso = 1 limit 1";
- 
+
         $result = $this->getRow($query);
         return $result;
     }
     public function editUserAdmir($user, $pass)
     {
-         $query = 'update acceso set user="' . $user . '", pass="' . $pass . '" where statusAcceso = 1';
+        $query = 'update acceso set user="' . $user . '", pass="' . $pass . '" where statusAcceso = 1';
 
         $result = $this->query($query);
         return $result;
@@ -70,8 +70,9 @@ class TicketsM extends Modelo
         date_default_timezone_set("America/Chicago");
         $fecha = date("Y-m-d H:i:s");
         $query = "update usuarios set fecha_modificacion = $fecha when idUsuario = 1";
- 
+        echo $query;
         $result = $this->query($query);
-        return $result;
+
+        echo var_dump($result);
     }
 }
