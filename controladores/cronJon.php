@@ -8,5 +8,6 @@ class cronJon extends App
 
         $ticketModel = $this->modelo("TicketsM");
         $result = $ticketModel->pruebaCron();
+        echo "listo";
     }
 }
