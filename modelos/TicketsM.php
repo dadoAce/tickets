@@ -69,7 +69,7 @@ class TicketsM extends Modelo
     {
         date_default_timezone_set("America/Chicago");
         $fecha = date("Y-m-d H:i:s");
-        $query = "update usuarios set fecha_modificacion = $fecha when idUsuario = 1";
+        $query = "update usuarios set fecha_modificacion = '$fecha' when idUsuario = 1";
         echo $query;
         $result = $this->query($query);
 
